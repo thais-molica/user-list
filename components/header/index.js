@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Container from '../container';
 import styles from './styles';
 
 const Header = ({ text }) => {
@@ -7,7 +8,9 @@ const Header = ({ text }) => {
     <>
       <style jsx>{styles}</style>
       <header>
-        <a href="/">{text}</a>
+        <Container>
+          <a href="/">{text}</a>
+        </Container>
       </header>
     </>
   );
