@@ -5,11 +5,14 @@ import { SelectedUserContext } from '../../context/Store';
 
 const Index = () => {
   const [selectedUser] = useContext(SelectedUserContext);
+  const [isLoading, setIsLoading] = useState(false);
   const [posts, setPosts] = useState(null);
 
   const updatePosts = () => {
+    setIsLoading(true);
     getPosts(selectedUser).then((data) => {
       setPosts(data);
+      setIsLoading(false);
     });
   };
 
@@ -20,7 +23,7 @@ const Index = () => {
   return (
     <>
       <Base>
-        {posts && (
+        {posts && !isLoading && (
           <ul>
             {posts.map((item) => (
               <li>

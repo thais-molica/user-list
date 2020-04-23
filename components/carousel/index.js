@@ -5,12 +5,15 @@ import styles from './styles';
 
 const Menu = () => {
   const [selectedUser] = useContext(SelectedUserContext);
+  const [isLoading, setIsLoading] = useState(false);
   const [photos, setPhotos] = useState(null);
   const [highlighPhoto, setHighlighPhoto] = useState(0);
 
   const updatePhotos = () => {
+    setIsLoading(true);
     getPhotos(selectedUser).then((data) => {
       setPhotos(data);
+      setIsLoading(false);
     });
   };
 
@@ -21,13 +24,14 @@ const Menu = () => {
   return (
     <>
       <style jsx>{styles}</style>
-      {photos && (
+      {photos && !isLoading && (
         <img
           src={photos[highlighPhoto].url}
           alt={photos[highlighPhoto].title}
         />
       )}
       {photos &&
+        !isLoading &&
         photos.map((item, index) => (
           <img
             src={item.thumbnailUrl}
