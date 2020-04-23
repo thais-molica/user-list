@@ -12,10 +12,12 @@ const Users = () => {
   };
 
   useEffect(() => {
-    getUsers().then((data) => {
-      setUsers(data);
-      setSelectedUser(data[0].id);
-    });
+    if (!users) {
+      getUsers().then((data) => {
+        setUsers(data);
+        setSelectedUser(data[0].id);
+      });
+    }
   }, []);
 
   return (

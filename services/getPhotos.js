@@ -11,10 +11,9 @@ async function getPhotosAsync(id) {
   }
 }
 
-const getPhotos = (id) => {
-  return getPhotosAsync(id).then((data) => {
-    return data.data;
-  });
+const getPhotos = async (id) => {
+  const data = await getPhotosAsync(id);
+  return data.data;
 };
 
 export default getPhotos;

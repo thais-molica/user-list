@@ -15,7 +15,7 @@ const Menu = () => {
             </Link>
           </li>
           <li>
-            <Link href={`/posts/:${id}`} as={`/posts/${id}`}>
+            <Link href="/posts/[id]" as={`/posts/${id}`}>
               <a>Posts</a>
             </Link>
           </li>

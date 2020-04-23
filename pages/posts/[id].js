@@ -9,13 +9,14 @@ const Index = () => {
 
   const updatePosts = () => {
     getPosts(selectedUser).then((data) => {
+      console.log(data)
       setPosts(data);
     });
   };
 
-  // useEffect(() => {
-  //   if (selectedUser) updatePosts();
-  // }, [selectedUser]);
+  useEffect(() => {
+    if (selectedUser) updatePosts();
+  }, [selectedUser]);
 
   return (
     <>

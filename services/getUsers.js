@@ -11,10 +11,9 @@ async function getUsersAsync() {
   }
 }
 
-const getUsers = () => {
-  return getUsersAsync().then((data) => {
-    return data.data;
-  });
+const getUsers = async () => {
+  const data = await getUsersAsync();
+  return data.data;
 };
 
 export default getUsers;
