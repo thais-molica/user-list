@@ -3,6 +3,7 @@ import theme from '../theme';
 
 export default css`
   div {
+    display: flex;
     margin: 0 auto;
     max-width: ${theme.container};
   }
