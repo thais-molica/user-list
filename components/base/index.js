@@ -4,6 +4,7 @@ import Header from '../header';
 import Users from '../users';
 import Menu from '../menu';
 import Container from '../container';
+import UserInfo from '../userInfo';
 import styles from './styles';
 
 const Base = ({ children }) => {
@@ -17,6 +18,7 @@ const Base = ({ children }) => {
         <Users />
         <div>
           <Menu />
+          <UserInfo />
           {children}
         </div>
       </Container>
