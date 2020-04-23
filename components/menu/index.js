@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Link from 'next/link';
 import styles from './styles';
+import { SelectedUserContext } from '../../context/Store';
 
 const Menu = () => {
-  const id = 1;
+  const [selectedUser] = useContext(SelectedUserContext);
   return (
     <>
       <style jsx>{styles}</style>
@@ -15,7 +16,7 @@ const Menu = () => {
             </Link>
           </li>
           <li>
-            <Link href="/posts/[id]" as={`/posts/${id}`}>
+            <Link href="/posts/[id]" as={`/posts/${selectedUser}`}>
               <a>Posts</a>
             </Link>
           </li>

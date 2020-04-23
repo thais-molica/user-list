@@ -3,7 +3,7 @@ import Utils from '../utils';
 
 async function getPostsAsync(id) {
   try {
-    const response = await axios.get(`${Utils.api}/posts?albumId=${id}`);
+    const response = await axios.get(`${Utils.api}/posts?userId=${id}`);
     const body = await response;
     return body;
   } catch (error) {
