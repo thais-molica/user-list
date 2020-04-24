@@ -1,14 +1,19 @@
 import React, { useContext, useEffect } from 'react';
+import Router, { useRouter } from 'next/router';
 import { v4 as uuid } from 'uuid';
 import styles from './styles';
 import getUsers from '../../services/getUsers';
 import { UserContext, SelectedUserContext } from '../../context/Store';
 
 const Users = () => {
+  const router = useRouter();
   const [users, setUsers] = useContext(UserContext);
   const [, setSelectedUser] = useContext(SelectedUserContext);
   const selectUser = (id) => {
     setSelectedUser(id);
+    const href = router.route;
+    const as = router.route.replace('[id]', id);
+    Router.push(href, as, { shallow: true });
   };
 
   useEffect(() => {
