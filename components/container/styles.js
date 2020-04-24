@@ -6,6 +6,7 @@ export default css`
     display: flex;
     margin: 0 auto;
     max-width: ${theme.container};
+    overflow: hidden;
   }
 
   @media ${theme.breakpoint.min.mobileL} {

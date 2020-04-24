@@ -31,4 +31,11 @@ export default css.global`
   button {
     font-family: ${theme.typography.primary};
   }
+  .main-content {
+    width: 100%;
+  }
+  .slick-prev:before,
+  .slick-next:before {
+    color: ${theme.palette.text};
+  }
 `;

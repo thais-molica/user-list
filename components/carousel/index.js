@@ -1,9 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
+import Slider from 'react-slick';
 import getPhotos from '../../services/getPhotos';
 import { SelectedUserContext } from '../../context/Store';
 import styles from './styles';
 
-const Menu = () => {
+const Carousel = () => {
   const [selectedUser] = useContext(SelectedUserContext);
   const [isLoading, setIsLoading] = useState(false);
   const [photos, setPhotos] = useState(null);
@@ -21,6 +22,15 @@ const Menu = () => {
     if (selectedUser) updatePhotos();
   }, [selectedUser]);
 
+  const settings = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    touchThreshold: 20,
+  };
+
   return (
     <>
       <style jsx>{styles}</style>
@@ -30,17 +40,17 @@ const Menu = () => {
           alt={photos[highlighPhoto].title}
         />
       )}
-      {photos &&
-        !isLoading &&
-        photos.map((item, index) => (
-          <img
-            src={item.thumbnailUrl}
-            onClick={() => setHighlighPhoto(index)}
-            alt={item.title}
-          />
-        ))}
+      {photos && !isLoading && (
+        <Slider {...settings}>
+          {photos.map((item, index) => (
+            <button type="button" onClick={() => setHighlighPhoto(index)}>
+              <img src={item.thumbnailUrl} alt={item.title} />
+            </button>
+          ))}
+        </Slider>
+      )}
     </>
   );
 };
 
-export default Menu;
+export default Carousel;

@@ -16,7 +16,7 @@ const Base = ({ children }) => {
       <Header />
       <Container>
         <Users />
-        <div>
+        <div className="main-content">
           <Menu />
           <UserInfo />
           {children}
