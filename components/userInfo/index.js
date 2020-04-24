@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { SelectedUserContext, UserContext } from '../../context/Store';
+import styles from './styles';
 
 const Index = () => {
   const [selectedUser] = useContext(SelectedUserContext);
@@ -10,10 +11,18 @@ const Index = () => {
 
     return (
       <>
-        {selectedUserObj.name}
-        Endereço:
-        {selectedUserObj.address.street} - {selectedUserObj.address.suite}
-        {selectedUserObj.address.city} - CEP: {selectedUserObj.address.zipcode}
+        <style jsx>{styles}</style>
+        <h2>{selectedUserObj.name}</h2>
+        <address>
+          Endereço:
+          <p>
+            {selectedUserObj.address.street} - {selectedUserObj.address.suite}
+          </p>
+          <p>
+            {selectedUserObj.address.city} - CEP:{' '}
+            {selectedUserObj.address.zipcode}
+          </p>
+        </address>
       </>
     );
   }

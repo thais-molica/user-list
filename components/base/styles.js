@@ -21,7 +21,8 @@ export default css.global`
     list-style: none;
   }
   h1,
-  h2 {
+  h2,
+  p {
     margin: 0;
   }
   a {
@@ -32,6 +33,7 @@ export default css.global`
     font-family: ${theme.typography.primary};
   }
   .main-content {
+    padding-left: ${theme.spacing(4)};
     width: 100%;
   }
   .slick-prev:before,
