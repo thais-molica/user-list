@@ -3,6 +3,7 @@ import { v4 as uuid } from 'uuid';
 import getPosts from '../../services/getPosts';
 import { SelectedUserContext } from '../../context/Store';
 import styles from './styles';
+import LOADER from '../../assets/imgs/loader.svg';
 
 const Posts = () => {
   const [selectedUser] = useContext(SelectedUserContext);
@@ -23,7 +24,8 @@ const Posts = () => {
 
   return (
     <>
-    <style jsx>{styles}</style>
+      <style jsx>{styles}</style>
+      {isLoading && <img src={LOADER} alt="Carregando conteúdo" />}
       {posts && !isLoading && (
         <ul>
           {posts.map((item) => (

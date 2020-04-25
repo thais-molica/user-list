@@ -4,10 +4,11 @@ import Slider from 'react-slick';
 import getPhotos from '../../services/getPhotos';
 import { SelectedUserContext } from '../../context/Store';
 import styles from './styles';
+import LOADER from '../../assets/imgs/loader.svg';
 
 const Carousel = () => {
   const [selectedUser] = useContext(SelectedUserContext);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [photos, setPhotos] = useState(null);
   const [highlighPhoto, setHighlighPhoto] = useState(0);
 
@@ -35,6 +36,7 @@ const Carousel = () => {
   return (
     <>
       <style jsx>{styles}</style>
+      {isLoading && <img src={LOADER} alt="Carregando conteúdo" />}
       {photos && !isLoading && (
         <img
           src={photos[highlighPhoto].url}

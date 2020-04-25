@@ -14,4 +14,8 @@ export default css`
   li + li {
     margin-top: ${theme.spacing(3)};
   }
+  img {
+    display: block;
+    margin: 0 auto;
+  }
 `;
