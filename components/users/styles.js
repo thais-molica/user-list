@@ -2,12 +2,11 @@ import css from 'styled-jsx/css';
 import theme from '../theme';
 
 export default css`
-  ul {
-    background: ${theme.palette.tertiary};
-    padding: ${theme.spacing(0.5)};
+  li {
+    border: ${theme.spacing(0.5)} solid ${theme.palette.tertiary};
   }
   li + li {
-    margin-top: ${theme.spacing(0.5)};
+    border-top: none;
   }
   button {
     background: ${theme.palette.white};
