@@ -44,6 +44,7 @@ export default css`
     display: block;
     left: 10px;
     position: absolute;
+    right: 10px;
     z-index: 9;
   }
 

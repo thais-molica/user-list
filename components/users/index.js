@@ -11,17 +11,14 @@ const Users = () => {
   const [users, setUsers] = useContext(UserContext);
   const [, setSelectedUser] = useContext(SelectedUserContext);
 
-  const openList = () => {
+  const toggleList = () => {
     if (window) {
       const menu = document.getElementById('user-menu');
-      menu.classList.add('opened-menu');
-    }
-  };
-
-  const closeList = () => {
-    if (window) {
-      const menu = document.getElementById('user-menu');
-      menu.classList.remove('opened-menu');
+      if (menu.classList.contains('opened-menu')) {
+        menu.classList.remove('opened-menu');
+      } else {
+        menu.classList.add('opened-menu');
+      }
     }
   };
 
@@ -30,7 +27,7 @@ const Users = () => {
     const href = router.route;
     const as = router.route.replace('[id]', id);
     Router.push(href, as, { shallow: true });
-    closeList();
+    toggleList();
   };
 
   useEffect(() => {
@@ -45,7 +42,7 @@ const Users = () => {
   return (
     <>
       <style jsx>{styles}</style>
-      <button type="button" onClick={openList} className="mbl-btn">
+      <button type="button" onClick={toggleList} className="mbl-btn">
         <img src={MENU} alt="menu de usuários" />
       </button>
       {users && (
