@@ -11,7 +11,7 @@ const Menu = () => {
       <nav>
         <ul>
           <li>
-            <Link href="/">
+            <Link href="/photos/[id]" as={`/photos/${selectedUser}`}>
               <a>Fotos</a>
             </Link>
           </li>
