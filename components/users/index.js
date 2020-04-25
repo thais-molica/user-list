@@ -27,7 +27,9 @@ const Users = () => {
     const href = router.route;
     const as = router.route.replace('[id]', id);
     Router.push(href, as, { shallow: true });
-    toggleList();
+    if (window) {
+      if (window.innerWidth < 768) toggleList();
+    }
   };
 
   useEffect(() => {

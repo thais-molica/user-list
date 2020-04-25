@@ -52,6 +52,9 @@ export default css`
     ul {
       width: 215px;
     }
+    .mbl-btn {
+      display: none;
+    }
   }
 
   @media ${theme.breakpoint.max.mobileL} {
