@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { v4 as uuid } from 'uuid';
 import Slider from 'react-slick';
 import getPhotos from '../../services/getPhotos';
 import { SelectedUserContext } from '../../context/Store';
@@ -38,12 +39,17 @@ const Carousel = () => {
         <img
           src={photos[highlighPhoto].url}
           alt={photos[highlighPhoto].title}
+          className="highlight-img"
         />
       )}
       {photos && !isLoading && (
         <Slider {...settings}>
           {photos.map((item, index) => (
-            <button type="button" onClick={() => setHighlighPhoto(index)}>
+            <button
+              type="button"
+              onClick={() => setHighlighPhoto(index)}
+              key={uuid()}
+            >
               <img src={item.thumbnailUrl} alt={item.title} />
             </button>
           ))}
