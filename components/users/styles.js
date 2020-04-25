@@ -2,6 +2,9 @@ import css from 'styled-jsx/css';
 import theme from '../theme';
 
 export default css`
+  ul {
+    width: 215px;
+  }
   li {
     border: ${theme.spacing(0.5)} solid ${theme.palette.tertiary};
   }

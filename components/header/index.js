@@ -22,7 +22,7 @@ const Header = ({ text }) => {
 export default Header;
 
 Header.defaultProps = {
-  text: 'Teste Dev Frontend',
+  text: 'Logo',
 };
 Header.propTypes = {
   text: PropTypes.string,

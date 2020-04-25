@@ -34,7 +34,7 @@ export default css.global`
   }
   .main-content {
     padding-left: ${theme.spacing(4)};
-    width: calc(100% - ${theme.spacing(8)});
+    width: calc(100% - (${theme.spacing(8)} + 215px));
   }
   .slick-prev:before,
   .slick-next:before {

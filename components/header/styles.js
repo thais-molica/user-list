@@ -10,5 +10,7 @@ export default css`
   }
   a {
     color: ${theme.palette.white};
+    display: block;
+    margin: 0 auto;
   }
 `;
