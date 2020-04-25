@@ -32,12 +32,19 @@ export default css.global`
   button {
     font-family: ${theme.typography.primary};
   }
-  .main-content {
-    padding-left: ${theme.spacing(4)};
-    width: calc(100% - (${theme.spacing(8)} + 215px));
-  }
   .slick-prev:before,
   .slick-next:before {
     color: ${theme.palette.text};
+  }
+  .main-content {
+    padding: 0 ${theme.spacing(2)};
+    width: 100%;
+  }
+
+  @media ${theme.breakpoint.min.mobileL} {
+    .main-content {
+      padding-left: ${theme.spacing(4)};
+      width: calc(100% - (${theme.spacing(8)} + 215px));
+    }
   }
 `;

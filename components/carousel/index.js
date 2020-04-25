@@ -25,12 +25,36 @@ const Carousel = () => {
   }, [selectedUser]);
 
   const settings = {
+    arrows: false,
     dots: false,
-    infinite: false,
+    infinite: true,
     speed: 500,
-    slidesToShow: 5,
+    slidesToShow: 3,
     slidesToScroll: 1,
     touchThreshold: 20,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 5,
+          arrows: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 5,
+          arrows: true,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 3,
+          arrows: false,
+        },
+      },
+    ],
   };
 
   return (

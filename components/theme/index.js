@@ -11,7 +11,6 @@ const theme = {
   },
   typography: {
     primary: 'Roboto',
-    secondary: 'Lato',
   },
   font: {
     size: {

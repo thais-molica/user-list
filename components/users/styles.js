@@ -2,16 +2,13 @@ import css from 'styled-jsx/css';
 import theme from '../theme';
 
 export default css`
-  ul {
-    width: 215px;
-  }
   li {
     border: ${theme.spacing(0.5)} solid ${theme.palette.tertiary};
   }
   li + li {
     border-top: none;
   }
-  button {
+  .user-btn {
     background: ${theme.palette.white};
     border: none;
     color: ${theme.palette.text};
@@ -23,7 +20,7 @@ export default css`
     text-align: left;
     width: 100%;
   }
-  button:hover {
+  .user-btn:hover {
     background: ${theme.palette.whiteHover};
   }
   strong {
@@ -37,5 +34,28 @@ export default css`
   }
   span + span {
     margin-top: ${theme.spacing(0.5)};
+  }
+  .mbl-btn {
+    left: 10px;
+    position: absolute;
+    top: 10px;
+  }
+  .opened-menu {
+    display: block;
+    left: 10px;
+    position: absolute;
+    z-index: 9;
+  }
+
+  @media ${theme.breakpoint.min.mobileL} {
+    ul {
+      width: 215px;
+    }
+  }
+
+  @media ${theme.breakpoint.max.mobileL} {
+    ul {
+      display: none;
+    }
   }
 `;
