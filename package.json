@@ -11,13 +11,13 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
-    "next": "9.3.5",
+    "next": "13.0.3",
     "prop-types": "^15.7.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-slick": "^0.25.2",
     "slick-carousel": "^1.8.1",
-    "styled-jsx": "^3.2.5",
+    "styled-jsx": "^5.1.0",
     "uuid": "^7.0.2"
   },
   "devDependencies": {
